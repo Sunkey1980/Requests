@@ -17,10 +17,11 @@ def weather_by_coords(lat,lon):
 
 def main():
     text = input("Введите наименование населенного пункта или его координаты разделенные символом пробела: ")
-    if text.isalpha():
+
+    if text.isalpha or "-" in text or "'" in text:
         pprint(weather_by_city(text))
     else:
-        pprint(weather_by_coords(text.split()[0], text.split()[1]))
+      pprint(weather_by_coords(text.split()[0], text.split()[1]))
 
 
 if __name__ == '__main__':
