@@ -8,16 +8,16 @@ def weather_by_city(city):
     result = requests.get('https://api.openweathermap.org/data/2.5/weather', params=params)
     data = result.json()
     if data.get('message') == 'city not found':
-        return ("Нет такого города на этой планете!")
+        return "Нет такого города на этой планете!"
     else:
         return(data)
 
 def weather_by_coords(lat,lon):
-    params = {'lat': lat, 'lon': lon, 'lang': 'ru', 'APPID': appid}
+    params = {'lat': lat, 'lon': lon,'units': 'metric','cnt': '3', 'lang': 'ru', 'APPID': appid}
     result = requests.get('https://api.openweathermap.org/data/2.5/weather', params=params)
     data = result.json()
     if data.get('message') == 'wrong latitude':
-        return ("Введите корректные координаты")
+        return "Введите корректные координаты"
     else:
         return(data)
 
