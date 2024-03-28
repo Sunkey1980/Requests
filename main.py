@@ -1,9 +1,7 @@
 import requests
 from pprint import pprint
 
-city = 'Оренбург'
 appid = '0cb53a3f6e9800a1a8a71e9d8a143f33'
-params={'q': city, 'units': 'metric','cnt':'3','lang': 'ru', 'APPID': appid}
 
 def weather_by_city(city):
     params = {'q': city, 'units': 'metric', 'cnt': '3', 'lang': 'ru', 'APPID': appid}
